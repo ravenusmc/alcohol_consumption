@@ -28,6 +28,17 @@ def main():
 def mainMenu():
   print("\033c")
   drinks = pd.read_csv('drinks.csv')
-  print(drinks.head())
+  print("Main Menu:")
+  print("1. Beer Servings by country")
+  choice = int(input("What is your choice? "))
+  while not mainMenuValid(choice):
+    print("Please enter an acceptable option!")
+    choice = int(input("What is your choice? "))
+  if choice == 1:
+    beerServings(drinks)
+
+def beerServings(drinks):
+  print("\033c")
+  print("Welcome to Beer Servings by Country")
 
 main()

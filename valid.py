@@ -4,3 +4,9 @@ def mainValid(choice):
     return True
   else:
     return False
+
+def mainMenuValid(choice):
+  if choice == 1:
+    return True
+  else: 
+    return False 
