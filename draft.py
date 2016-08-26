@@ -16,12 +16,50 @@ drinks = pd.read_csv('drinks.csv')
 
 #print(drinks[['country', 'beer_servings']])
 
-point = drinks[['country']]
+# index = np.arange(192)
+# bar_width = 0.25
+
+stateList = drinks[['country']]
+beerList = drinks[['beer_servings']]
+
 stateArray = []
+beerArray = []
+
 i = 0
 while i < 193: 
-  state = point.iat[i,0]
+  state = stateList.iat[i,0]
+  beer = beerList.iat[i,0]
   stateArray.append(state)
+  beerArray.append(beer)
   i += 1 
 
-print(stateArray)
+y_pos = np.arange(len(stateArray))
+
+plt.bar(y_pos, beerArray, align='center', alpha=0.5)
+plt.xticks(y_pos, stateList)
+plt.xlabel("State", fontsize=14)
+plt.ylabel("Beer Servings", fontsize=12)
+plt.title("Beer Servings by State", fontsize=16)
+plt.show()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+

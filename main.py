@@ -40,5 +40,7 @@ def mainMenu():
 def beerServings(drinks):
   print("\033c")
   print("Welcome to Beer Servings by Country")
+  print("Here you will see which states have the most beer!")
+  
 
 main()
