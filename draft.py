@@ -14,7 +14,14 @@ drinks = pd.read_csv('drinks.csv')
 
 #print(drinks[drinks.country])
 
-print(drinks[['country', 'beer_servings']])
-print(drinks[['beer_servings']])
+#print(drinks[['country', 'beer_servings']])
 
-page 150 Pandas book
+point = drinks[['country']]
+stateArray = []
+i = 0
+while i < 193: 
+  state = point.iat[i,0]
+  stateArray.append(state)
+  i += 1 
+
+print(stateArray)
