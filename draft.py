@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 #cols = ['Beer_Servings', 'Spirit_Servings', 'Wine_Servings', 'Total_Litres_of_Pure_Alcohol']
 # drinks = pd.read_csv('drinks.csv', index_col="country")
 
-drinks = pd.read_csv('drinks.csv')
+# drinks = pd.read_csv('drinks.csv')
 #print(drinks.head())
 
 #Seeing the data types of the data.
@@ -19,28 +19,36 @@ drinks = pd.read_csv('drinks.csv')
 # index = np.arange(192)
 # bar_width = 0.25
 
-stateList = drinks[['country']]
-beerList = drinks[['beer_servings']]
+drinks = pd.read_csv('http://bit.ly/drinksbycountry')
+#print(drinks.head())
 
-stateArray = []
-beerArray = []
+print((drinks[drinks.continent == "Africa"]).head())
 
-i = 0
-while i < 193: 
-  state = stateList.iat[i,0]
-  beer = beerList.iat[i,0]
-  stateArray.append(state)
-  beerArray.append(beer)
-  i += 1 
 
-y_pos = np.arange(len(stateArray))
+### CREATING A BAR GRAPH:
 
-plt.bar(y_pos, beerArray, align='center', alpha=0.5)
-plt.xticks(y_pos, stateList)
-plt.xlabel("State", fontsize=14)
-plt.ylabel("Beer Servings", fontsize=12)
-plt.title("Beer Servings by State", fontsize=16)
-plt.show()
+# stateList = drinks[['country']]
+# beerList = drinks[['beer_servings']]
+
+# stateArray = []
+# beerArray = []
+
+# i = 0
+# while i < 193: 
+#   state = stateList.iat[i,0]
+#   beer = beerList.iat[i,0]
+#   stateArray.append(state)
+#   beerArray.append(beer)
+#   i += 1 
+
+# y_pos = np.arange(len(stateArray))
+
+# plt.barh(y_pos, beerArray, align='center', alpha=0.5)
+# plt.xticks(y_pos, stateList)
+# plt.xlabel("State", fontsize=14)
+# plt.ylabel("Beer Servings", fontsize=12)
+# plt.title("Beer Servings by State", fontsize=16)
+# plt.show()
 
 
 
