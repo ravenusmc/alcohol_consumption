@@ -10,3 +10,10 @@ def mainMenuValid(choice):
     return True
   else: 
     return False 
+
+def optionsValid(choice):
+  if choice == 1 or choice == 2:
+    return True
+  else: 
+    return False
+    

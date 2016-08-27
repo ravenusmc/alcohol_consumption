@@ -22,8 +22,9 @@ import matplotlib.pyplot as plt
 drinks = pd.read_csv('http://bit.ly/drinksbycountry')
 #print(drinks.head())
 
-print((drinks[drinks.continent == "Africa"]).head())
-
+#print(movies[(movies.duration > 200) & (movies.genre == 'Drama')])
+#print((drinks[(drinks.continent == "Africa") & (drinks.beer_servings >= 1)]))
+plt.show(drinks.groupby('continent').mean().plot(kind='bar'))
 
 ### CREATING A BAR GRAPH:
 

@@ -27,20 +27,39 @@ def main():
 #they want to do. 
 def mainMenu():
   print("\033c")
-  drinks = pd.read_csv('drinks.csv')
+  drinks = pd.read_csv('http://bit.ly/drinksbycountry')
   print("Main Menu:")
-  print("1. Beer Servings by country")
+  print("1. Average drinks by Continent")
   choice = int(input("What is your choice? "))
   while not mainMenuValid(choice):
     print("Please enter an acceptable option!")
     choice = int(input("What is your choice? "))
   if choice == 1:
-    beerServings(drinks)
+    AvergeDrinksByContinent(drinks)
 
-def beerServings(drinks):
+#This function will show the user the graph of the average drinks by continent. 
+def AvergeDrinksByContinent(drinks):
   print("\033c")
-  print("Welcome to Beer Servings by Country")
-  print("Here you will see which states have the most beer!")
-  
+  print("Welcome to average drinks by continent")
+  print("Here you will see the average drinks by continent")
+  print("Please not that in order to move on, you have to actually close the graph.")
+  plt.show(drinks.groupby('continent').mean().plot(kind='bar'))
+  mainOptions()
+
+### Non critical functions: 
+
+#This function is a generic function to allow the user to quit or to return to the main menu. 
+def mainOptions():
+  print("1. Main Menu")
+  print("2. Quit")
+  choice = int(input("What is your option? "))
+  while not optionsValid(choice):
+    print("That option is not allowed!")
+    choice = int(input("What is your option? "))
+  if choice == 1:
+    mainMenu()
+  elif choice == 2:
+    print("Thank you for using the program!")
+    print("Hope you come back soon!")
 
 main()
